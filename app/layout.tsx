@@ -35,9 +35,17 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
+        <div
+          className="fixed top-0 left-0 right-0 h-32 sm:h-48 pointer-events-none z-40 bg-gradient-to-b from-background to-transparent"
+          aria-hidden
+        />
         <main className="pt-16 sm:pt-[4.5rem]">
           {children}
         </main>
+        <div
+          className="fixed bottom-0 left-0 right-0 h-32 sm:h-48 pointer-events-none z-40 bg-gradient-to-t from-background to-transparent"
+          aria-hidden
+        />
       </body>
     </html>
   );
