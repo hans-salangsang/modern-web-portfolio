@@ -1,0 +1,111 @@
+/*
+  Fonts are loaded from public/fonts. Next.js serves public/ at / so paths are /fonts/...
+  Expected files:
+  - public/fonts/sage_grotesk/   → Sage Grotesk (e.g. SageGrotesk.woff2 or .ttf)
+  - public/fonts/martian_mono/   → MartianMono-StdRg, MartianMono-CnRg, MartianMono-NrRg, MartianMono-WdRg (.woff2 or .ttf)
+*/
+
+/* Sage Grotesk – headings */
+@font-face {
+  font-family: "Sage Grotesk";
+  src: url("/fonts/sage_grotesk/SageGrotesk.woff2") format("woff2"),
+       url("/fonts/sage_grotesk/SageGrotesk.woff") format("woff"),
+       url("/fonts/sage_grotesk/SageGrotesk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Martian Mono – body (standard width, regular weight) */
+@font-face {
+  font-family: "Martian Mono";
+  src: url("/fonts/martian_mono/MartianMono-StdRg.woff2") format("woff2"),
+       url("/fonts/martian_mono/MartianMono-StdRg.woff") format("woff"),
+       url("/fonts/martian_mono/MartianMono-StdRg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Martian Mono – condensed (optional: badges, captions) */
+@font-face {
+  font-family: "Martian Mono Condensed";
+  src: url("/fonts/martian_mono/MartianMono-CnRg.woff2") format("woff2"),
+       url("/fonts/martian_mono/MartianMono-CnRg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Martian Mono – narrow (optional) */
+@font-face {
+  font-family: "Martian Mono Narrow";
+  src: url("/fonts/martian_mono/MartianMono-NrRg.woff2") format("woff2"),
+       url("/fonts/martian_mono/MartianMono-NrRg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Martian Mono – wide (optional: emphasis) */
+@font-face {
+  font-family: "Martian Mono Wide";
+  src: url("/fonts/martian_mono/MartianMono-WdRg.woff2") format("woff2"),
+       url("/fonts/martian_mono/MartianMono-WdRg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-narrow: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-martian-condensed: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-martian-wide: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --background: #161211;
+  --foreground: #FFF8E8;
+  --accent: #7C8CFF;
+}
+
+/* Tailwind v4: single import (replaces @tailwind base/components/utilities) */
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-narrow: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-condensed: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-wide: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-off-white: #FFF8E8;
+  --color-black: #FFF8E8;
+  --color-background: #161211;
+  --color-foreground: #FFF8E8;
+  --color-accent: #7C8CFF;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    text-transform: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  h1 {
+    font-weight: 700;
+  }
+}
+
