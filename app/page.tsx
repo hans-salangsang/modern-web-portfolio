@@ -51,8 +51,8 @@ export default function Home() {
         <div className="grid grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-44 sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-stretch">
           <div className="col-span-2 min-w-0">
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
-              <span className="block">Hans</span>
-              <span className="block -mt-1 sm:-mt-2 ml-0.5">Salangsang</span>
+              <span className="block text-foreground">Hans</span>
+              <span className="block -mt-1 sm:-mt-2 ml-0.5 text-foreground">Salangsang</span>
             </h1>
           </div>
           <div className="col-span-1 min-w-0 text-right flex flex-col items-end">
@@ -60,7 +60,7 @@ export default function Home() {
               <p className="font-body text-sm font-normal text-foreground tracking-normal uppercase whitespace-nowrap">
                 Full Stack Developer
               </p>
-              <p className="font-body text-sm text-foreground/60 leading-normal mt-1 max-w-[280px] sm:max-w-[320px]">
+              <p className="font-body text-sm text-muted leading-normal mt-1 max-w-[280px] sm:max-w-[320px]">
                 I build maintainable solutions and solve problems relentlessly
                 — so much,
                 <br />
@@ -101,7 +101,7 @@ export default function Home() {
       {/* Skills */}
       <section id="skills" className="py-20">
         <div className="grid grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <p className="col-start-1 text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-left">
+          <p className="col-start-1 text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left">
             Tools and tech I know. Still learning more.
           </p>
           <h2 className="col-start-2 font-heading text-3xl">Skills</h2>
@@ -110,7 +110,7 @@ export default function Home() {
           {Object.entries(skills).map(([category, items]) => (
             <div
               key={category}
-              className="col-start-2 py-8 text-left overflow-x-auto border-b border-foreground/15 last:border-b-0"
+              className="col-start-2 py-8 text-left overflow-x-auto border-b border-divider last:border-b-0"
             >
               <span className="font-body text-sm font-normal text-foreground tracking-normal uppercase block mb-5">
                 {category}
@@ -119,7 +119,7 @@ export default function Home() {
                 {items.map((skill, j) => (
                   <span
                     key={j}
-                    className="inline-flex items-center rounded-full px-2.5 py-1 font-body text-sm font-normal text-foreground/60 bg-white/[0.06]"
+                    className="inline-flex items-center rounded-full px-2.5 py-1 font-body text-sm font-normal text-muted bg-accent/10"
                   >
                     {skill}
                   </span>
@@ -134,7 +134,7 @@ export default function Home() {
       <section id="experience" className="py-20">
         <div className="flex flex-wrap items-start justify-between gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
           <h2 className="font-heading text-3xl">Experience</h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-right">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-right">
             Where I've been and what I've learned along the way.
           </p>
         </div>
@@ -143,9 +143,9 @@ export default function Home() {
           {experience.map((entry, i) => (
             <div
               key={i}
-              className="grid min-w-[560px] grid-cols-[minmax(10rem,1fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] gap-x-4 sm:gap-x-6 py-8 text-left items-start border-b border-foreground/15 last:border-b-0"
+              className="grid min-w-[560px] grid-cols-[minmax(10rem,1fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] gap-x-4 sm:gap-x-6 py-8 text-left items-start border-b border-divider last:border-b-0"
             >
-              <span className="font-body text-sm text-foreground/60">
+              <span className="font-body text-sm text-muted">
                 {entry.dates}
               </span>
               <span className="font-body text-base font-normal text-foreground uppercase">
@@ -153,7 +153,7 @@ export default function Home() {
               </span>
               <div className="font-body text-foreground">
                 <span className="block text-base uppercase">{entry.title}</span>
-                <div className="text-sm text-foreground/60 mt-0.5 leading-normal">
+                <div className="text-sm text-muted mt-0.5 leading-normal">
                   {entry.keywords.split(", ").map((kw, j) => (
                     <span key={j} className="block">
                       {kw}
@@ -161,7 +161,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <span className="font-body text-sm text-foreground/60 text-right">
+              <span className="font-body text-sm text-muted-subtle text-right">
                 {entry.type}
               </span>
             </div>
@@ -172,7 +172,7 @@ export default function Home() {
       {/* Projects — table-like layout */}
       <section id="projects" className="py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <p className="text-sm text-foreground/60 text-left md:col-span-2 max-w-[320px] sm:max-w-[380px] md:max-w-none">
+          <p className="text-sm text-muted-subtle text-left md:col-span-2 max-w-[320px] sm:max-w-[380px] md:max-w-none">
             Some things I've built. Take a look and see what's possible.
           </p>
           <h2 className="font-heading text-3xl lg:col-start-3">Projects</h2>
@@ -182,39 +182,17 @@ export default function Home() {
             {projects.map((project, i) => (
               <div
                 key={i}
-                className="font-body text-foreground text-left py-8 border-b border-foreground/15"
+                className="font-body text-foreground text-left py-8 border-b border-divider"
               >
                 <span className="block text-base font-normal uppercase">
                   {project.name}
                 </span>
-                <p className="text-sm text-foreground/60 mt-1 leading-normal">
+                <p className="text-sm text-muted mt-1 leading-normal">
                   {project.summary}
                 </p>
-                <p className="font-body text-xs text-foreground/60 mt-2 leading-normal">
+                <p className="font-body text-sm text-muted-subtle mt-8 leading-normal">
                   {project.tech}
                 </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
-                  <a
-                    href={project.liveUrl}
-                    className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
-                  >
-                    GitHub
-                  </a>
-                  {project.caseStudyUrl && (
-                    <a
-                      href={project.caseStudyUrl}
-                      className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
-                    >
-                      Case Study
-                    </a>
-                  )}
-                </div>
               </div>
             ))}
           </div>
@@ -225,7 +203,7 @@ export default function Home() {
       <section id="contact" className="pt-20 pb-32 sm:pb-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
           <h2 className="font-heading text-3xl">Contact</h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 md:max-w-none">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none">
             Let's connect and start a conversation.
           </p>
         </div>
@@ -233,25 +211,25 @@ export default function Home() {
           {/* Left: contact information */}
           <div className="flex flex-col w-full">
             <div className="flex flex-col w-full">
-              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+              <div className="flex items-start gap-4 py-6 border-b border-divider">
                 <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </span>
                 <EmailLink email="hans.salangsang@gmail.com" className="font-body text-sm text-foreground hover:underline underline-offset-4 cursor-pointer">hans.salangsang@gmail.com</EmailLink>
               </div>
-              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+              <div className="flex items-start gap-4 py-6 border-b border-divider">
                 <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 </span>
                 <span className="font-body text-sm text-foreground">+63 945 976 5721</span>
               </div>
-              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+              <div className="flex items-start gap-4 py-6 border-b border-divider">
                 <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </span>
                 <a href="https://www.linkedin.com/in/hans-wilhelm-salangsang/" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-foreground hover:underline underline-offset-4">linkedin.com/in/hans-wilhelm-salangsang</a>
               </div>
-              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+              <div className="flex items-start gap-4 py-6 border-b border-divider">
                 <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </span>

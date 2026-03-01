@@ -23,7 +23,7 @@ export default function KpiCard({
       <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground tracking-normal leading-none transition-transform duration-300 group-hover:translate-y-[-1px]">
         {value}
       </span>
-      <p className="font-body text-sm text-foreground/60 leading-normal mt-1">
+      <p className="font-body text-sm text-muted leading-normal mt-1">
         {description}
       </p>
     </div>

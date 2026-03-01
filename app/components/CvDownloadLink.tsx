@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
+import Button from "./Button";
 
 type CvDownloadLinkProps = {
   href?: string;
@@ -9,16 +10,13 @@ type CvDownloadLinkProps = {
   className?: string;
 };
 
-const baseClasses =
-  "font-body text-sm font-normal tracking-normal text-white rounded-full px-4 py-2 inline-block bg-neutral-800 hover:bg-neutral-700 transition-colors cursor-pointer";
-
 export default function CvDownloadLink({
   href = "/Salangsang_Hans_Wilhelm-CV.pdf",
   downloadFilename = "Salangsang_Hans_Wilhelm-CV.pdf",
   children = "Download my CV",
   className = "",
 }: CvDownloadLinkProps) {
-  async function handleClick(e: React.MouseEvent) {
+  async function handleClick(e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
     e.preventDefault();
     try {
       const res = await fetch(href);
@@ -38,12 +36,14 @@ export default function CvDownloadLink({
   }
 
   return (
-    <a
+    <Button
       href={href}
+      variant="outline"
       onClick={handleClick}
-      className={`${baseClasses} ${className}`.trim()}
+      download={downloadFilename}
+      className={className}
     >
       {children}
-    </a>
+    </Button>
   );
 }

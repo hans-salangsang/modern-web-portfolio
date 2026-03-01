@@ -11,36 +11,36 @@ export default function ContactForm() {
         onSubmit={(e) => e.preventDefault()}
       >
         <div className="flex flex-col gap-2">
-          <label htmlFor="contact-name" className="font-body text-sm font-normal text-foreground">
+          <label htmlFor="contact-name" className="font-body text-sm font-normal text-muted">
             Name
           </label>
           <input
             id="contact-name"
             type="text"
-            placeholder="Your Name"
-            className="font-body text-sm text-foreground placeholder:text-foreground/50 bg-white/[0.06] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background"
+            placeholder="Your name"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="contact-email" className="font-body text-sm font-normal text-foreground">
+          <label htmlFor="contact-email" className="font-body text-sm font-normal text-muted">
             Email
           </label>
           <input
             id="contact-email"
             type="email"
-            placeholder="name@framer.com"
-            className="font-body text-sm text-foreground placeholder:text-foreground/50 bg-white/[0.06] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background"
+            placeholder="Your email"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="contact-message" className="font-body text-sm font-normal text-foreground">
+          <label htmlFor="contact-message" className="font-body text-sm font-normal text-muted">
             Message
           </label>
           <textarea
             id="contact-message"
             rows={4}
-            placeholder="Type Your Message"
-            className="font-body text-sm text-foreground placeholder:text-foreground/50 bg-white/[0.06] rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background"
+            placeholder="Type your message"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <Button type="submit">Send Message</Button>
