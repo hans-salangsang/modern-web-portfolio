@@ -58,11 +58,11 @@
 }
 
 :root {
-  --font-heading: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-narrow: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-martian-condensed: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-martian-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-body: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-mono-narrow: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-martian-condensed: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-martian-wide: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
   --background: #080808;
   --foreground: #FFF8E8;
   --accent: #7C8CFF;
@@ -72,11 +72,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-narrow: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-condensed: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-body: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-mono-narrow: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-mono-condensed: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  --font-mono-wide: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
   --color-off-white: #FFF8E8;
   --color-black: #FFF8E8;
   --color-background: #080808;
