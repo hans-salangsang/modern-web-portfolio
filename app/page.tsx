@@ -102,7 +102,7 @@ export default function Home() {
       <section id="skills" className="py-20">
         <div className="grid grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
           <p className="col-start-1 text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-left">
-            Add your skills and technologies here.
+            Tools and tech I know. Still learning more.
           </p>
           <h2 className="col-start-2 font-heading text-3xl">Skills</h2>
         </div>
@@ -135,7 +135,7 @@ export default function Home() {
         <div className="flex flex-wrap items-start justify-between gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
           <h2 className="font-heading text-3xl">Experience</h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-right">
-            My technical journey and growth so far
+            Where I've been and what I've learned along the way.
           </p>
         </div>
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 overflow-x-auto mt-8">
@@ -171,11 +171,11 @@ export default function Home() {
 
       {/* Projects — table-like layout */}
       <section id="projects" className="py-20">
-        <div className="flex flex-wrap items-start justify-between gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-left">
-            Add your project cards and links here.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
+          <p className="text-sm text-foreground/60 text-left md:col-span-2 max-w-[320px] sm:max-w-[380px] md:max-w-none">
+            Some things I've built. Take a look and see what's possible.
           </p>
-          <h2 className="font-heading text-3xl">Projects</h2>
+          <h2 className="font-heading text-3xl lg:col-start-3">Projects</h2>
         </div>
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-0 [&>*:last-child]:border-b-0 md:[&>*:nth-last-child(-n+2)]:border-b-0 lg:[&>*:nth-last-child(-n+3)]:border-b-0">
@@ -226,7 +226,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
           <h2 className="font-heading text-3xl">Contact</h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 md:max-w-none">
-            Reach out for projects or collaboration.
+            Let's connect and start a conversation.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
