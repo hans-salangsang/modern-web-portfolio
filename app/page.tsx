@@ -143,15 +143,15 @@ export default function Home() {
           {experience.map((entry, i) => (
             <div
               key={i}
-              className="grid min-w-[560px] grid-cols-[11rem_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] py-8 text-left items-start [column-gap:0] border-b border-foreground/15 last:border-b-0"
+              className="grid min-w-[560px] grid-cols-[minmax(10rem,1fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] gap-x-4 sm:gap-x-6 py-8 text-left items-start border-b border-foreground/15 last:border-b-0"
             >
-              <span className="font-body text-sm text-foreground/60 uppercase pr-4">
+              <span className="font-body text-sm text-foreground/60">
                 {entry.dates}
               </span>
-              <span className="font-body text-base font-normal text-foreground pl-16 pr-0 uppercase">
+              <span className="font-body text-base font-normal text-foreground uppercase">
                 {entry.company}
               </span>
-              <div className="font-body text-foreground -ml-24">
+              <div className="font-body text-foreground">
                 <span className="block text-base uppercase">{entry.title}</span>
                 <div className="text-sm text-foreground/60 mt-0.5 leading-normal">
                   {entry.keywords.split(", ").map((kw, j) => (
@@ -161,7 +161,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <span className="font-body text-sm text-foreground/60 text-right pl-4 uppercase">
+              <span className="font-body text-sm text-foreground/60 text-right">
                 {entry.type}
               </span>
             </div>

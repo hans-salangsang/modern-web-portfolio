@@ -3,7 +3,7 @@ export const projects = [
     name: "Retail Stock",
     summary:
       "A multi-tenant inventory system for small retail stores with real-time stock tracking.",
-    tech: "Frontend: React, Tailwind · Backend: Node.js, PostgreSQL · Deployment: Vercel",
+    tech: "React, Tailwind · Node.js, PostgreSQL · Vercel",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: null as string | null,
@@ -12,7 +12,7 @@ export const projects = [
     name: "Taskflow",
     summary:
       "Team task management with kanban boards, due dates, and Slack notifications.",
-    tech: "Frontend: Next.js, TypeScript · Backend: Node.js · Deployment: Vercel",
+    tech: "Next.js, TypeScript · Node.js · Vercel",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "#",
@@ -21,7 +21,7 @@ export const projects = [
     name: "Analytics Dashboard",
     summary:
       "Internal analytics dashboard for sales and support with filters and export.",
-    tech: "Frontend: React, Tailwind · Backend: Python, FastAPI · Database: PostgreSQL",
+    tech: "React, Tailwind · Python, FastAPI · PostgreSQL",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: null as string | null,
@@ -30,7 +30,7 @@ export const projects = [
     name: "Auth Gateway",
     summary:
       "Centralized auth and SSO for internal tools with role-based access.",
-    tech: "Frontend: React · Backend: Node.js · Database: Redis, PostgreSQL",
+    tech: "React · Node.js · Redis, PostgreSQL",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "#",
@@ -39,7 +39,7 @@ export const projects = [
     name: "Doc Generator",
     summary:
       "API docs and changelog generator from OpenAPI specs and git history.",
-    tech: "Frontend: React, Tailwind · Backend: Node.js · Deployment: Vercel",
+    tech: "React, Tailwind · Node.js · Vercel",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: null as string | null,
@@ -48,7 +48,7 @@ export const projects = [
     name: "Feedback Widget",
     summary:
       "Embeddable feedback widget for product teams with sentiment and tags.",
-    tech: "Frontend: React, Tailwind · Backend: Node.js, PostgreSQL · Deployment: Vercel",
+    tech: "React, Tailwind · Node.js, PostgreSQL · Vercel",
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "#",
