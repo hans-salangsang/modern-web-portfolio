@@ -8,10 +8,10 @@ type ButtonProps = {
 };
 
 const filledClasses =
-  "inline-block bg-foreground text-background px-6 py-3 font-body text-sm font-bold tracking-[0.08em] uppercase rounded-md transition-all duration-200 hover:bg-foreground/90 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background";
+  "inline-block bg-white text-neutral-900 px-4 py-2 font-body text-sm font-medium tracking-normal rounded-full transition-all duration-200 hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-background";
 
 const outlineClasses =
-  "inline-block border-2 border-foreground text-foreground bg-transparent px-6 py-3 font-body text-sm font-bold tracking-[0.08em] uppercase rounded-md transition-all duration-200 hover:bg-foreground hover:text-background focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background";
+  "inline-block bg-neutral-800 text-white px-4 py-2 font-body text-sm font-medium tracking-normal rounded-full transition-all duration-200 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2 focus:ring-offset-background";
 
 export default function Button({
   href,

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import NavLinks from "./components/NavLinks";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -20,14 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={poppins.variable}>
+      <body className={`${poppins.className} antialiased`}>
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="flex flex-wrap items-center justify-between gap-4 py-4 sm:py-5 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
               <a
                 href="#hero"
-                className="font-heading text-lg sm:text-xl font-semibold text-foreground opacity-95 hover:opacity-100 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background rounded"
+                className="font-heading text-lg sm:text-xl font-semibold text-foreground opacity-95 hover:opacity-100 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background rounded capitalize"
               >
                 Hans Salangsang
               </a>

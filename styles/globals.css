@@ -58,11 +58,11 @@
 }
 
 :root {
-  --font-heading: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-narrow: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-martian-condensed: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-martian-wide: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-narrow: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-martian-condensed: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-martian-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
   --background: #161211;
   --foreground: #FFF8E8;
   --accent: #7C8CFF;
@@ -72,11 +72,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-narrow: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-condensed: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono-wide: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-narrow: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-condensed: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
   --color-off-white: #FFF8E8;
   --color-black: #FFF8E8;
   --color-background: #161211;
@@ -93,7 +93,8 @@
     color: var(--foreground);
     font-family: var(--font-body);
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
+    letter-spacing: normal;
     text-transform: none;
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
