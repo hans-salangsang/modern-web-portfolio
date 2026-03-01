@@ -63,7 +63,7 @@
   --font-mono-narrow: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-martian-condensed: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-martian-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --background: #161211;
+  --background: #080808;
   --foreground: #FFF8E8;
   --accent: #7C8CFF;
 }
@@ -79,7 +79,7 @@
   --font-mono-wide: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
   --color-off-white: #FFF8E8;
   --color-black: #FFF8E8;
-  --color-background: #161211;
+  --color-background: #080808;
   --color-foreground: #FFF8E8;
   --color-accent: #7C8CFF;
 }

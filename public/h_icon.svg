@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #080808 } 
+		.s1 { fill: #fff8e8 } 
+	</style>
+	<g id="Layer 2">
+		<path id="&lt;Path&gt;" class="s0" d="m848.86 1024h-673.72c-96.73 0-175.14-78.41-175.14-175.14v-673.72c0-96.73 78.41-175.14 175.14-175.14h673.72c96.73 0 175.14 78.41 175.14 175.14v673.72c0 96.73-78.41 175.14-175.14 175.14z"/>
+	</g>
+	<g id="Layer 1">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<path id="&lt;Compound Path&gt;" class="s1" d="m932.81 476.96l-327.26 327.26h-233.82l257.18-257.18h-46.72l-257.18 257.18h-233.82l397.34-397.57h1.16l-186.87-186.87h233.82l186.87 186.87h-1.16l-70.08 70.31z"/>
+			</g>
+		</g>
+	</g>
+</svg>

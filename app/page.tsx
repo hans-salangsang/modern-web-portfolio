@@ -1,29 +1,9 @@
 import KpiCard from "./components/KpiCard";
 import Button from "./components/Button";
 import CvDownloadLink from "./components/CvDownloadLink";
-
-const skills: Record<string, string[]> = {
-  Frontend: [
-    "React",
-    "NextJS",
-    "Angular",
-    "JavaScript",
-    "TypeScript",
-    "Tailwind CSS",
-    "Bootstrap",
-    "Material UI",
-  ],
-  Backend: [
-    "Node.js",
-    "PHP",
-    "Laravel",
-    "Java",
-    "C#",
-    "Python",
-  ],
-  Database: ["MySQL", "Microsoft SQL Server"],
-  DevOps: ["Git", "GitHub", "GitLab", "Vercel"],
-};
+import ContactForm from "./components/ContactForm";
+import EmailLink from "./components/EmailLink";
+import { skills, experience, projects } from "./data";
 
 const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 const techMeta: Record<string, { icon: string; color: string }> = {
@@ -160,41 +140,19 @@ export default function Home() {
         </div>
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 overflow-x-auto mt-8">
           {/* Experience rows */}
-          {[
-            {
-              company: "Infor PSSC, Inc.",
-              dates: "Jun 2025 – Mar 2026",
-              title: "Software Engineer",
-              keywords: "Analytics, Automation, Data Modeling",
-              type: "Full-time",
-            },
-            {
-              company: "Infor PSSC, Inc.",
-              dates: "Aug 2023 – May 2025",
-              title: "Technical Consultant",
-              keywords: "Integration, Development, Support",
-              type: "Full-time",
-            },
-            {
-              company: "LexMeet, Inc.",
-              dates: "Mar 2023 – Jun 2023",
-              title: "Web Developer Intern",
-              keywords: "Full Stack, Leadership, Collaboration",
-              type: "Internship",
-            },
-          ].map((entry, i) => (
+          {experience.map((entry, i) => (
             <div
               key={i}
               className="grid min-w-[560px] grid-cols-[11rem_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] py-8 text-left items-start [column-gap:0] border-b border-foreground/15 last:border-b-0"
             >
-              <span className="font-body text-xs text-foreground/60 uppercase pr-4">
+              <span className="font-body text-sm text-foreground/60 uppercase pr-4">
                 {entry.dates}
               </span>
-              <span className="font-body text-base font-normal text-foreground pl-16 pr-0">
+              <span className="font-body text-base font-normal text-foreground pl-16 pr-0 uppercase">
                 {entry.company}
               </span>
               <div className="font-body text-foreground -ml-24">
-                <span className="block text-base">{entry.title}</span>
+                <span className="block text-base uppercase">{entry.title}</span>
                 <div className="text-sm text-foreground/60 mt-0.5 leading-normal">
                   {entry.keywords.split(", ").map((kw, j) => (
                     <span key={j} className="block">
@@ -203,7 +161,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <span className="font-body text-xs text-foreground/60 text-right pl-4 uppercase">
+              <span className="font-body text-sm text-foreground/60 text-right pl-4 uppercase">
                 {entry.type}
               </span>
             </div>
@@ -211,23 +169,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Projects — table-like layout */}
       <section id="projects" className="py-20">
-        <div className="max-w-4xl ml-6 sm:ml-12 lg:ml-16">
-          <h2 className="font-heading text-3xl">Projects</h2>
-          <p className="mt-4 text-base max-w-[600px]">
+        <div className="flex flex-wrap items-start justify-between gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 text-left">
             Add your project cards and links here.
           </p>
+          <h2 className="font-heading text-3xl">Projects</h2>
+        </div>
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-0 [&>*:last-child]:border-b-0 md:[&>*:nth-last-child(-n+2)]:border-b-0 lg:[&>*:nth-last-child(-n+3)]:border-b-0">
+            {projects.map((project, i) => (
+              <div
+                key={i}
+                className="font-body text-foreground text-left py-8 border-b border-foreground/15"
+              >
+                <span className="block text-base font-normal uppercase">
+                  {project.name}
+                </span>
+                <p className="text-sm text-foreground/60 mt-1 leading-normal">
+                  {project.summary}
+                </p>
+                <p className="font-body text-xs text-foreground/60 mt-2 leading-normal">
+                  {project.tech}
+                </p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+                  <a
+                    href={project.liveUrl}
+                    className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
+                  >
+                    GitHub
+                  </a>
+                  {project.caseStudyUrl && (
+                    <a
+                      href={project.caseStudyUrl}
+                      className="font-body text-sm text-foreground/60 hover:underline underline-offset-4"
+                    >
+                      Case Study
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20">
-        <div className="max-w-4xl ml-6 sm:ml-12 lg:ml-16">
+      <section id="contact" className="pt-20 pb-32 sm:pb-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
           <h2 className="font-heading text-3xl">Contact</h2>
-          <p className="mt-4 text-base max-w-[600px]">
-            Add your contact form or social links here.
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-foreground/60 md:max-w-none">
+            Reach out for projects or collaboration.
           </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
+          {/* Left: contact information */}
+          <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full">
+              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+                <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </span>
+                <EmailLink email="hans.salangsang@gmail.com" className="font-body text-sm text-foreground hover:underline underline-offset-4 cursor-pointer">hans.salangsang@gmail.com</EmailLink>
+              </div>
+              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+                <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </span>
+                <span className="font-body text-sm text-foreground">+63 945 976 5721</span>
+              </div>
+              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+                <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </span>
+                <a href="https://www.linkedin.com/in/hans-wilhelm-salangsang/" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-foreground hover:underline underline-offset-4">linkedin.com/in/hans-wilhelm-salangsang</a>
+              </div>
+              <div className="flex items-start gap-4 py-6 border-b border-foreground/15">
+                <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </span>
+                <a href="https://github.com/hans-salangsang" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-foreground hover:underline underline-offset-4">github.com/hans-salangsang</a>
+              </div>
+              <div className="flex items-start gap-4 py-6">
+                <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </span>
+                <span className="font-body text-sm text-foreground">Bulacan, Philippines</span>
+              </div>
+            </div>
+          </div>
+          {/* Right: Send Message form */}
+          <ContactForm />
         </div>
       </section>
       </div>
