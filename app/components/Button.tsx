@@ -11,10 +11,10 @@ type ButtonProps = {
 };
 
 const filledClasses =
-  "inline-block cursor-pointer bg-foreground text-background px-4 py-2 font-body text-sm font-semibold tracking-normal rounded-full transition-all duration-200 hover:bg-foreground/90 focus:outline-none focus:ring-2 focus:ring-foreground/50 focus:ring-offset-2 focus:ring-offset-background";
+  "inline-block cursor-pointer bg-foreground text-background px-4 py-2 font-body text-sm font-semibold tracking-normal rounded-full whitespace-nowrap transition-all duration-200 hover:bg-foreground/90 focus:outline-none focus:ring-2 focus:ring-foreground/50 focus:ring-offset-2 focus:ring-offset-background";
 
 const outlineClasses =
-  "inline-block cursor-pointer bg-background border border-accent text-foreground px-4 py-2 font-body text-sm font-medium tracking-normal rounded-full transition-all duration-200 hover:bg-accent/10 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background";
+  "inline-block cursor-pointer bg-background border border-accent text-foreground px-4 py-2 font-body text-sm font-medium tracking-normal rounded-full whitespace-nowrap transition-all duration-200 hover:bg-accent/10 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background";
 
 export default function Button({
   href,

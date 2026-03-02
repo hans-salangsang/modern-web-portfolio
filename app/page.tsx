@@ -48,27 +48,32 @@ export default function Home() {
         className="relative w-full flex flex-col"
       >
         {/* Hero: 3 columns — name (2 cols), role + description (1 col) */}
-        <div className="grid grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-44 sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-stretch">
-          <div className="col-span-2 min-w-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-stretch">
+          <div className="md:col-span-2 min-w-0">
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
               <span className="block text-foreground">Hans</span>
               <span className="block -mt-1 sm:-mt-2 ml-0.5 text-foreground">Salangsang</span>
             </h1>
           </div>
-          <div className="col-span-1 min-w-0 text-right flex flex-col items-end">
+          <div className="md:col-span-1 min-w-0 text-left md:text-right flex flex-col items-start md:items-end mt-10 md:mt-0">
             <div>
               <p className="font-body text-sm font-normal text-foreground tracking-normal uppercase whitespace-nowrap">
                 Full Stack Developer
               </p>
               <p className="font-body text-sm text-muted leading-normal mt-1 max-w-[280px] sm:max-w-[320px]">
-                I build maintainable solutions and solve problems relentlessly
-                — so much,
-                <br />
-                I even debug in my dreams.
+                <span className="block whitespace-nowrap">
+                  I build maintainable solutions and solve
+                </span>
+                <span className="block whitespace-nowrap">
+                  problems relentlessly — so much,
+                </span>
+                <span className="block whitespace-nowrap">
+                  I even debug in my dreams.
+                </span>
               </p>
             </div>
-            <div className="flex-1 min-h-[1rem]" aria-hidden />
-            <div className="flex flex-row items-center gap-3 mt-6 mb-4">
+            <div className="hidden md:block flex-1 min-h-[1rem]" aria-hidden />
+            <div className="flex flex-row items-center gap-3 mt-8 md:mt-6 mb-4 justify-start md:justify-end">
               <Button href="#contact">Contact me</Button>
               <CvDownloadLink />
             </div>
@@ -76,21 +81,21 @@ export default function Home() {
         </div>
 
         {/* KPI block */}
-        <div className="grid grid-cols-3 gap-x-10 sm:gap-x-16 lg:gap-x-20 gap-y-14 sm:gap-y-20 pt-52 pb-8 sm:pb-10 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 sm:gap-x-16 lg:gap-x-20 gap-y-14 sm:gap-y-20 pt-52 pb-8 sm:pb-10 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
           <KpiCard
-            className="col-start-1"
+            className="lg:col-start-1"
             label="Years of experience"
             value="3+"
             description="I have been building full-stack applications, dashboards, and analytical tools across different industries."
           />
           <KpiCard
-            className="col-start-2"
+            className="lg:col-start-2"
             label="KPI label"
             value="0"
             description="Short description or metric summary goes here."
           />
           <KpiCard
-            className="col-start-1"
+            className="lg:col-start-1"
             label="KPI label"
             value="0"
             description="Short description or metric summary goes here."
@@ -100,17 +105,17 @@ export default function Home() {
 
       {/* Skills */}
       <section id="skills" className="py-20">
-        <div className="grid grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <p className="col-start-1 text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
+          <h2 className="font-heading text-3xl order-1 md:order-2 md:text-right">Skills</h2>
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left order-2 md:order-1 mt-3 md:mt-0">
             Tools and tech I know. Still learning more.
           </p>
-          <h2 className="col-start-2 font-heading text-3xl">Skills</h2>
         </div>
-        <div className="grid grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
           {Object.entries(skills).map(([category, items]) => (
             <div
               key={category}
-              className="col-start-2 py-8 text-left overflow-x-auto border-b border-divider last:border-b-0"
+              className="md:col-start-2 py-8 text-left overflow-x-auto border-b border-divider last:border-b-0"
             >
               <span className="font-body text-sm font-normal text-foreground tracking-normal uppercase block mb-5">
                 {category}
@@ -132,9 +137,9 @@ export default function Home() {
 
       {/* Experience — table-like layout */}
       <section id="experience" className="py-20">
-        <div className="flex flex-wrap items-start justify-between gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+        <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
           <h2 className="font-heading text-3xl">Experience</h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-right">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left md:text-right mt-3 md:mt-0">
             Where I've been and what I've learned along the way.
           </p>
         </div>
@@ -143,27 +148,49 @@ export default function Home() {
           {experience.map((entry, i) => (
             <div
               key={i}
-              className="grid min-w-[560px] grid-cols-[minmax(10rem,1fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,7rem)] gap-x-4 sm:gap-x-6 py-8 text-left items-start border-b border-divider last:border-b-0"
+              className="py-8 text-left border-b border-divider last:border-b-0"
             >
-              <span className="font-body text-sm text-muted">
-                {entry.dates}
-              </span>
-              <span className="font-body text-base font-normal text-foreground uppercase">
-                {entry.company}
-              </span>
-              <div className="font-body text-foreground">
-                <span className="block text-base uppercase">{entry.title}</span>
-                <div className="text-sm text-muted mt-0.5 leading-normal">
-                  {entry.keywords.split(", ").map((kw, j) => (
-                    <span key={j} className="block">
-                      {kw}
-                    </span>
-                  ))}
+              {/* Mobile / stacked layout */}
+              <div className="flex flex-col gap-1 md:hidden">
+                <div className="font-body text-sm text-foreground">
+                  <span className="font-normal uppercase">
+                    {entry.title}, {entry.company}
+                  </span>
+                </div>
+                <div className="font-body text-sm text-muted mt-1 leading-normal">
+                  {entry.keywords.split(", ").join(" · ")}
+                </div>
+                <div className="mt-6 font-body text-sm text-muted-subtle">
+                  <span>
+                    {entry.dates}, {entry.type}
+                  </span>
                 </div>
               </div>
-              <span className="font-body text-sm text-muted-subtle text-right">
-                {entry.type}
-              </span>
+
+              {/* Desktop / table layout */}
+              <div className="hidden md:grid md:grid-cols-4 md:gap-x-4 lg:gap-x-6 items-start">
+                <span className="font-body text-sm text-muted">
+                  {entry.dates}
+                </span>
+                <span className="font-body text-base font-normal text-foreground uppercase">
+                  {entry.company}
+                </span>
+                <div className="font-body text-foreground">
+                  <span className="block text-base uppercase">{entry.title}</span>
+                  <div className="text-sm text-muted mt-0.5 leading-normal">
+                    {entry.keywords.split(", ").map((kw, j) => (
+                      <span key={j} className="block">
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col items-end justify-end">
+                  <span className="font-body text-sm text-muted-subtle">
+                    {entry.type}
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -171,11 +198,11 @@ export default function Home() {
 
       {/* Projects — table-like layout */}
       <section id="projects" className="py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <p className="text-sm text-muted-subtle text-left md:col-span-2 max-w-[320px] sm:max-w-[380px] md:max-w-none">
+        <div className="flex flex-col md:flex-row-reverse items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+          <h2 className="font-heading text-3xl">Projects</h2>
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle text-left mt-3 md:mt-0 md:whitespace-nowrap">
             Some things I've built. Take a look and see what's possible.
           </p>
-          <h2 className="font-heading text-3xl lg:col-start-3">Projects</h2>
         </div>
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-0 [&>*:last-child]:border-b-0 md:[&>*:nth-last-child(-n+2)]:border-b-0 lg:[&>*:nth-last-child(-n+3)]:border-b-0">
@@ -190,7 +217,7 @@ export default function Home() {
                 <p className="text-sm text-muted mt-1 leading-normal">
                   {project.summary}
                 </p>
-                <p className="font-body text-sm text-muted-subtle mt-8 leading-normal">
+                <p className="font-body text-sm text-muted-subtle mt-6 leading-normal">
                   {project.tech}
                 </p>
               </div>
@@ -201,9 +228,9 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="pt-20 pb-32 sm:pb-40">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
           <h2 className="font-heading text-3xl">Contact</h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none mt-3 md:mt-0">
             Let's connect and start a conversation.
           </p>
         </div>
@@ -244,7 +271,9 @@ export default function Home() {
             </div>
           </div>
           {/* Right: Send Message form */}
-          <ContactForm />
+          <div className="w-full border border-divider rounded-xl p-6 sm:p-8">
+            <ContactForm />
+          </div>
         </div>
       </section>
       </div>
