@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import EmailLink from "./components/EmailLink";
 import HoverRevealText from "./components/HoverRevealText";
 import ScrollLinked from "./components/ScrollLinked";
+import TypewriterText from "./components/TypewriterText";
 import { skills, experience, projects } from "./data";
 
 const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
@@ -70,8 +71,10 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start lg:items-stretch">
           <div className="lg:col-span-2 min-w-0">
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
-              <span className="block text-foreground">Hans</span>
-              <span className="block -mt-1 sm:-mt-2 ml-0.5 text-foreground">Salangsang</span>
+              <TypewriterText
+                text="Hans Salangsang"
+                className="block text-foreground -mt-1 sm:-mt-2 -ml-0.5"
+              />
             </h1>
           </div>
           <div className="lg:col-span-1 min-w-0 text-left lg:text-right flex flex-col items-start lg:items-end mt-10 lg:mt-0">
