@@ -1,8 +1,13 @@
+"use client";
+
+import { motion } from "framer-motion";
 import KpiCard from "./components/KpiCard";
 import Button from "./components/Button";
 import CvDownloadLink from "./components/CvDownloadLink";
 import ContactForm from "./components/ContactForm";
 import EmailLink from "./components/EmailLink";
+import HoverRevealText from "./components/HoverRevealText";
+import ScrollLinked from "./components/ScrollLinked";
 import { skills, experience, projects } from "./data";
 
 const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
@@ -29,6 +34,16 @@ const techMeta: Record<string, { icon: string; color: string }> = {
   Vercel: { icon: "vercel", color: "#000000" },
 };
 
+const sectionFade = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const itemFade = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
+
 function isLight(hex: string): boolean {
   const h = hex.replace("#", "");
   const r = parseInt(h.slice(0, 2), 16) / 255;
@@ -41,21 +56,25 @@ function isLight(hex: string): boolean {
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-background text-foreground font-body">
+      <ScrollLinked withContent={false} />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       {/* Hero: full-screen, asymmetric */}
-      <section
+      <motion.section
         id="hero"
         className="relative w-full flex flex-col"
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Hero: 3 columns — name (2 cols), role + description (1 col) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-stretch">
-          <div className="md:col-span-2 min-w-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start lg:items-stretch">
+          <div className="lg:col-span-2 min-w-0">
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
               <span className="block text-foreground">Hans</span>
               <span className="block -mt-1 sm:-mt-2 ml-0.5 text-foreground">Salangsang</span>
             </h1>
           </div>
-          <div className="md:col-span-1 min-w-0 text-left md:text-right flex flex-col items-start md:items-end mt-10 md:mt-0">
+          <div className="lg:col-span-1 min-w-0 text-left lg:text-right flex flex-col items-start lg:items-end mt-10 lg:mt-0">
             <div>
               <p className="font-body text-sm font-normal text-foreground tracking-normal uppercase whitespace-nowrap">
                 Full Stack Developer
@@ -72,8 +91,8 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <div className="hidden md:block flex-1 min-h-[1rem]" aria-hidden />
-            <div className="flex flex-row items-center gap-3 mt-8 md:mt-6 mb-4 justify-start md:justify-end">
+            <div className="hidden lg:block flex-1 min-h-[1rem]" aria-hidden />
+            <div className="flex flex-row items-center gap-3 mt-8 lg:mt-6 mb-4 justify-start lg:justify-end">
               <Button href="#contact">Contact me</Button>
               <CvDownloadLink />
             </div>
@@ -85,37 +104,54 @@ export default function Home() {
           <KpiCard
             className="lg:col-start-1"
             label="Years of experience"
-            value="3+"
+            value={3}
+            suffix="+"
+            durationMs={1000}
             description="I have been building full-stack applications, dashboards, and analytical tools across different industries."
           />
           <KpiCard
             className="lg:col-start-2"
             label="KPI label"
-            value="0"
+            value={12}
             description="Short description or metric summary goes here."
           />
           <KpiCard
             className="lg:col-start-1"
             label="KPI label"
-            value="0"
+            value={24}
             description="Short description or metric summary goes here."
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills */}
-      <section id="skills" className="py-20">
+      <motion.section
+        id="skills"
+        className="py-20"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <h2 className="font-heading text-3xl order-1 md:order-2 md:text-right">Skills</h2>
+          <h2 className="font-heading text-3xl order-1 md:order-2 md:text-right">
+            <HoverRevealText>Skills</HoverRevealText>
+          </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left order-2 md:order-1 mt-3 md:mt-0">
             Tools and tech I know. Still learning more.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
-          {Object.entries(skills).map(([category, items]) => (
-            <div
+          {Object.entries(skills).map(([category, items], i) => (
+            <motion.div
               key={category}
               className="md:col-start-2 py-8 text-left overflow-x-auto border-b border-divider last:border-b-0"
+              variants={itemFade}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 * i }}
             >
               <span className="font-body text-sm font-normal text-foreground tracking-normal uppercase block mb-5">
                 {category}
@@ -130,25 +166,40 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience — table-like layout */}
-      <section id="experience" className="py-20">
+      <motion.section
+        id="experience"
+        className="py-20"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <h2 className="font-heading text-3xl">Experience</h2>
+          <h2 className="font-heading text-3xl">
+            <HoverRevealText>Experience</HoverRevealText>
+          </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left md:text-right mt-3 md:mt-0">
             Where I've been and what I've learned along the way.
           </p>
         </div>
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 overflow-x-auto mt-8">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
           {/* Experience rows */}
           {experience.map((entry, i) => (
-            <div
+            <motion.div
               key={i}
               className="py-8 text-left border-b border-divider last:border-b-0"
+              variants={itemFade}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.45, ease: "easeOut", delay: 0.04 * i }}
             >
               {/* Mobile / stacked layout */}
               <div className="flex flex-col gap-1 md:hidden">
@@ -191,15 +242,25 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects — table-like layout */}
-      <section id="projects" className="py-20">
+      <motion.section
+        id="projects"
+        className="py-20"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="flex flex-col md:flex-row-reverse items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <h2 className="font-heading text-3xl">Projects</h2>
+          <h2 className="font-heading text-3xl">
+            <HoverRevealText>Projects</HoverRevealText>
+          </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle text-left mt-3 md:mt-0 md:whitespace-nowrap">
             Some things I've built. Take a look and see what's possible.
           </p>
@@ -207,9 +268,14 @@ export default function Home() {
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-0 [&>*:last-child]:border-b-0 md:[&>*:nth-last-child(-n+2)]:border-b-0 lg:[&>*:nth-last-child(-n+3)]:border-b-0">
             {projects.map((project, i) => (
-              <div
+              <motion.div
                 key={i}
                 className="font-body text-foreground text-left py-8 border-b border-divider"
+                variants={itemFade}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.45, ease: "easeOut", delay: 0.05 * i }}
               >
                 <span className="block text-base font-normal uppercase">
                   {project.name}
@@ -220,23 +286,40 @@ export default function Home() {
                 <p className="font-body text-sm text-muted-subtle mt-6 leading-normal">
                   {project.tech}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact */}
-      <section id="contact" className="pt-20 pb-32 sm:pb-40">
+      <motion.section
+        id="contact"
+        className="pt-20 pb-32 sm:pb-40"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <h2 className="font-heading text-3xl">Contact</h2>
+          <h2 className="font-heading text-3xl">
+            <HoverRevealText>Contact</HoverRevealText>
+          </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none mt-3 md:mt-0">
             Let's connect and start a conversation.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
           {/* Left: contact information */}
-          <div className="flex flex-col w-full">
+          <motion.div
+            className="flex flex-col w-full"
+            variants={itemFade}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+          >
             <div className="flex flex-col w-full">
               <div className="flex items-start gap-4 py-6 border-b border-divider">
                 <span className="text-foreground mt-0.5 shrink-0" aria-hidden>
@@ -269,13 +352,20 @@ export default function Home() {
                 <span className="font-body text-sm text-foreground">Bulacan, Philippines</span>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Right: Send Message form */}
-          <div className="w-full border border-divider rounded-xl p-6 sm:p-8">
+          <motion.div
+            className="w-full border border-divider rounded-xl p-6 sm:p-8"
+            variants={itemFade}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }}
+          >
             <ContactForm />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
       </div>
     </div>
   );

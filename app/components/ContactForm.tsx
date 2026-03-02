@@ -18,7 +18,7 @@ export default function ContactForm() {
             id="contact-name"
             type="text"
             placeholder="Your name"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -29,7 +29,7 @@ export default function ContactForm() {
             id="contact-email"
             type="email"
             placeholder="Your email"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -40,7 +40,7 @@ export default function ContactForm() {
             id="contact-message"
             rows={4}
             placeholder="Type your message"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-background"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
           />
         </div>
         <Button type="submit">Send Message</Button>

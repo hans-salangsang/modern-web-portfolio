@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import NavLinks from "./components/NavLinks";
+import MobileNav from "./components/MobileNav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export default function RootLayout({
             <div className="flex flex-wrap items-center justify-between gap-4 py-4 sm:py-5 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
               <a
                 href="#hero"
-                className="inline-block opacity-95 hover:opacity-100 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:ring-offset-2 focus:ring-offset-background rounded text-foreground"
+                className="inline-block opacity-95 hover:opacity-100 transition-opacity duration-200 focus:outline-none rounded text-foreground"
                 aria-label="Hans Salangsang - Home"
               >
                 <svg
@@ -53,6 +54,7 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
+        <MobileNav />
         <div
           className="fixed top-0 left-0 right-0 h-32 sm:h-48 pointer-events-none z-40 bg-gradient-to-b from-background to-transparent"
           aria-hidden
