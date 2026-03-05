@@ -1,14 +1,44 @@
 "use client";
 
+import { useState } from "react";
+import type { FormEvent } from "react";
 import Button from "./Button";
 
 export default function ContactForm() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch {
+      // Silently fail on the client; errors are handled/logged on the server.
+    }
+  };
+
   return (
     <div className="w-full min-w-0">
       <h3 className="font-body text-base font-normal text-foreground uppercase mb-6">Send Message</h3>
       <form
         className="flex flex-col gap-5"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={handleSubmit}
       >
         <div className="flex flex-col gap-2">
           <label htmlFor="contact-name" className="font-body text-sm font-normal text-muted">
@@ -19,6 +49,8 @@ export default function ContactForm() {
             type="text"
             placeholder="Your name"
             className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -30,6 +62,8 @@ export default function ContactForm() {
             type="email"
             placeholder="Your email"
             className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -41,6 +75,8 @@ export default function ContactForm() {
             rows={4}
             placeholder="Type your message"
             className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-1 focus:ring-divider focus:ring-offset-2 focus:ring-offset-background"
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
           />
         </div>
         <Button type="submit">Send Message</Button>
