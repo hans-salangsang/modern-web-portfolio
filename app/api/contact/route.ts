@@ -125,7 +125,6 @@ function buildOwnerEmailHtml(name: string, email: string, message: string) {
                     margin:20px 0 4px 0;
                     font-size:12px;
                     letter-spacing:0.06em;
-                    text-transform:uppercase;
                     color:#FFF8E8;
                   "
                 >
@@ -302,7 +301,6 @@ function buildUserEmailHtml(name: string, email: string, message: string) {
                     margin:20px 0 4px 0;
                     font-size:12px;
                     letter-spacing:0.06em;
-                    text-transform:uppercase;
                     color: #FFF8E8;
                   "
                 >

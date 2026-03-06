@@ -78,7 +78,7 @@ export default function Home() {
           </div>
           <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center mt-6 sm:mt-6 md:mt-6">
             <div className="flex flex-col gap-3">
-              <p className="font-body text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground tracking-tight uppercase whitespace-nowrap">
+              <p className="font-body text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground tracking-tight whitespace-nowrap">
                 Full Stack Developer
               </p>
               <p className="font-body text-sm text-muted leading-normal max-w-[280px] sm:max-w-[320px] text-left md:text-center md:mx-auto">
@@ -154,7 +154,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 * i }}
             >
-              <span className="font-body text-base font-normal text-foreground tracking-normal uppercase block mb-5">
+              <span className="font-body text-base font-normal text-foreground tracking-normal block mb-5">
                 {category}
               </span>
               <div className="flex flex-wrap gap-x-2 gap-y-2 min-w-0 items-center leading-loose">
@@ -205,7 +205,7 @@ export default function Home() {
               {/* Mobile / stacked layout */}
               <div className="flex flex-col gap-1 md:hidden">
                 <div className="font-body text-sm text-foreground">
-                  <span className="font-normal uppercase">
+                  <span className="font-normal">
                     {entry.title}, {entry.company}
                   </span>
                 </div>
@@ -224,11 +224,11 @@ export default function Home() {
                 <span className="font-body text-sm text-muted">
                   {entry.dates}
                 </span>
-                <span className="font-body text-base font-normal text-foreground uppercase">
+                <span className="font-body text-base font-normal text-foreground">
                   {entry.company}
                 </span>
                 <div className="font-body text-foreground">
-                  <span className="block text-base uppercase">{entry.title}</span>
+                  <span className="block text-base">{entry.title}</span>
                   <div className="text-sm text-muted mt-0.5 leading-normal">
                     {entry.keywords.split(", ").map((kw, j) => (
                       <span key={j} className="block">
@@ -278,7 +278,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.05 * i }}
               >
-                <span className="block text-base font-normal uppercase">
+                <span className="block text-base font-normal">
                   {project.name}
                 </span>
                 <p className="text-sm text-muted mt-1 leading-normal">

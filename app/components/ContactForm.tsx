@@ -35,7 +35,7 @@ export default function ContactForm() {
 
   return (
     <div className="w-full min-w-0">
-      <h3 className="font-body text-base font-normal text-foreground uppercase mb-6">Send Message</h3>
+      <h3 className="font-body text-base font-normal text-foreground mb-6">Send Message</h3>
       <form
         className="flex flex-col gap-5"
         onSubmit={handleSubmit}
