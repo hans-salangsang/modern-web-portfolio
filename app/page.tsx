@@ -68,21 +68,20 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Hero: 3 columns — name (2 cols), role + description (1 col) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start lg:items-stretch">
-          <div className="lg:col-span-2 min-w-0">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-center md:justify-items-center">
+          <div className="min-w-0 text-left md:text-center">
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
-              <TypewriterText
-                text="Hans Salangsang"
-                className="block text-foreground -mt-1 sm:-mt-2 -ml-0.5"
-              />
+              <span className="block text-foreground -mt-1 sm:-mt-2 -ml-0.5">
+                Hans Salangsang
+              </span>
             </h1>
           </div>
-          <div className="lg:col-span-1 min-w-0 text-left lg:text-right flex flex-col items-start lg:items-end mt-10 lg:mt-0">
-            <div>
-              <p className="font-body text-sm font-normal text-foreground tracking-normal uppercase whitespace-nowrap">
+          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center mt-6 sm:mt-8 md:mt-10">
+            <div className="flex flex-col gap-3">
+              <p className="font-body text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground tracking-tight uppercase whitespace-nowrap">
                 Full Stack Developer
               </p>
-              <p className="font-body text-sm text-muted leading-normal mt-1 max-w-[280px] sm:max-w-[320px]">
+              <p className="font-body text-sm text-muted leading-normal max-w-[280px] sm:max-w-[320px] text-left md:text-center md:mx-auto">
                 <span className="block whitespace-nowrap">
                   I build maintainable solutions and solve
                 </span>
@@ -94,8 +93,7 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <div className="hidden lg:block flex-1 min-h-[1rem]" aria-hidden />
-            <div className="flex flex-row items-center gap-3 mt-8 lg:mt-6 mb-4 justify-start lg:justify-end">
+            <div className="flex flex-row items-center gap-3 mt-6 md:mt-7 mb-4 justify-start md:justify-center">
               <Button href="#contact">Contact me</Button>
               <CvDownloadLink />
             </div>

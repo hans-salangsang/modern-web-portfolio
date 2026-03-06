@@ -14,10 +14,10 @@ type ButtonProps = {
 };
 
 const filledClasses =
-  "inline-block cursor-pointer bg-foreground text-background px-4 py-2 font-body text-sm font-semibold tracking-normal rounded-full whitespace-nowrap hover:bg-foreground/90 focus:outline-none";
+  "inline-block cursor-pointer bg-foreground text-background px-4 py-2 font-body text-sm font-semibold tracking-normal rounded-lg whitespace-nowrap hover:bg-foreground/90 focus:outline-none";
 
 const outlineClasses =
-  "inline-block cursor-pointer bg-background border border-accent text-foreground px-4 py-2 font-body text-sm font-medium tracking-normal rounded-full whitespace-nowrap hover:bg-accent/10 focus:outline-none";
+  "inline-block cursor-pointer bg-background border border-accent text-foreground px-4 py-2 font-body text-sm font-medium tracking-normal rounded-lg whitespace-nowrap hover:bg-accent/10 focus:outline-none";
 
 export default function Button({
   href,
