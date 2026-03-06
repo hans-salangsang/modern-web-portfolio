@@ -53,7 +53,7 @@ export default function KpiCard({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <span className="font-body text-sm font-normal text-foreground tracking-normal uppercase">
+      <span className="font-body text-base font-normal text-foreground tracking-normal uppercase">
         {label}
       </span>
       <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground tracking-normal leading-none">

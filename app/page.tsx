@@ -76,7 +76,7 @@ export default function Home() {
               </span>
             </h1>
           </div>
-          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center mt-6 sm:mt-8 md:mt-10">
+          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center mt-6 sm:mt-6 md:mt-6">
             <div className="flex flex-col gap-3">
               <p className="font-body text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground tracking-tight uppercase whitespace-nowrap">
                 Full Stack Developer
@@ -136,7 +136,7 @@ export default function Home() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <h2 className="font-heading text-3xl order-1 md:order-2 md:text-right">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] order-1 md:order-2 md:text-right">
             <HoverRevealText>Skills</HoverRevealText>
           </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left order-2 md:order-1 mt-3 md:mt-0">
@@ -154,7 +154,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 * i }}
             >
-              <span className="font-body text-sm font-normal text-foreground tracking-normal uppercase block mb-5">
+              <span className="font-body text-base font-normal text-foreground tracking-normal uppercase block mb-5">
                 {category}
               </span>
               <div className="flex flex-wrap gap-x-2 gap-y-2 min-w-0 items-center leading-loose">
@@ -183,7 +183,7 @@ export default function Home() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <h2 className="font-heading text-3xl">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Experience</HoverRevealText>
           </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left md:text-right mt-3 md:mt-0">
@@ -212,7 +212,7 @@ export default function Home() {
                 <div className="font-body text-sm text-muted mt-1 leading-normal">
                   {entry.keywords.split(", ").join(" · ")}
                 </div>
-                <div className="mt-6 font-body text-sm text-muted-subtle">
+                <div className="mt-1 font-body text-sm text-muted-subtle">
                   <span>
                     {entry.dates}, {entry.type}
                   </span>
@@ -259,7 +259,7 @@ export default function Home() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="flex flex-col md:flex-row-reverse items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <h2 className="font-heading text-3xl">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Projects</HoverRevealText>
           </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle text-left mt-3 md:mt-0 md:whitespace-nowrap">
@@ -284,7 +284,7 @@ export default function Home() {
                 <p className="text-sm text-muted mt-1 leading-normal">
                   {project.summary}
                 </p>
-                <p className="font-body text-sm text-muted-subtle mt-6 leading-normal">
+                <p className="font-body text-sm text-muted-subtle mt-1 leading-normal">
                   {project.tech}
                 </p>
               </motion.div>
@@ -304,7 +304,7 @@ export default function Home() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <h2 className="font-heading text-3xl">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Contact</HoverRevealText>
           </h2>
           <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none mt-3 md:mt-0">

@@ -23,7 +23,7 @@ export default function HoverRevealText({ children }: HoverRevealTextProps) {
   // On mobile / small screens, render static text with no hover animation
   if (!isDesktop) {
     return (
-      <span className="inline-flex relative overflow-hidden align-baseline">
+      <span className="inline-flex relative overflow-hidden align-baseline pb-1">
         {children}
       </span>
     );
@@ -32,7 +32,7 @@ export default function HoverRevealText({ children }: HoverRevealTextProps) {
   // Desktop: hover reveal animation
   return (
     <motion.span
-      className="inline-flex relative overflow-hidden align-baseline"
+      className="inline-flex relative overflow-hidden align-baseline pb-2"
       initial="rest"
       animate="rest"
       whileHover="hover"
@@ -41,7 +41,7 @@ export default function HoverRevealText({ children }: HoverRevealTextProps) {
         className="inline-block"
         variants={{
           rest: { y: "0%" },
-          hover: { y: "-100%" },
+          hover: { y: "-120%" },
         }}
         transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
       >
@@ -50,7 +50,7 @@ export default function HoverRevealText({ children }: HoverRevealTextProps) {
       <motion.span
         className="inline-block absolute left-0 top-0"
         variants={{
-          rest: { y: "100%" },
+          rest: { y: "120%" },
           hover: { y: "0%" },
         }}
         transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
