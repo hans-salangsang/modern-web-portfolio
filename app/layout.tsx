@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import NavLinks from "./components/NavLinks";
 import MobileNav from "./components/MobileNav";
+import ToasterProvider from "./components/ToasterProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className={`${poppins.className} antialiased`}>
+        <ToasterProvider />
         <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="flex flex-wrap items-center justify-between gap-4 py-4 sm:py-5 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
