@@ -12,12 +12,12 @@ export default function ToasterProvider() {
       toastOptions={{
         classNames: {
           toast:
-            "font-body rounded-xl !border-0 !bg-accent/10 !text-foreground shadow-lg backdrop-blur px-4 py-3",
+            "font-body rounded-xl !border-0 !bg-[color-mix(in_oklch,var(--accent)_10%,var(--background))] !text-foreground shadow-lg px-4 py-3",
           title: "font-body text-sm text-foreground leading-snug",
           description: "font-body text-sm !text-muted leading-snug",
           icon: "!text-foreground",
           closeButton:
-            "!text-foreground hover:!text-foreground hover:bg-accent/10 !border !border-divider !bg-background/40",
+            "!text-foreground hover:!text-foreground hover:bg-accent/10 !border !border-divider !bg-background",
           actionButton:
             "bg-foreground text-background hover:bg-foreground/90 !border-0",
           cancelButton:
