@@ -7,33 +7,11 @@ import CvDownloadLink from "./components/CvDownloadLink";
 import ContactForm from "./components/ContactForm";
 import EmailLink from "./components/EmailLink";
 import HoverRevealText from "./components/HoverRevealText";
+import Pill from "./components/Pill";
+import SkillsBento from "./components/SkillsBento";
 import ScrollLinked from "./components/ScrollLinked";
 import TypewriterText from "./components/TypewriterText";
-import { skills, experience, projects } from "./data";
-
-const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
-const techMeta: Record<string, { icon: string; color: string }> = {
-  React: { icon: "react", color: "#61DAFB" },
-  NextJS: { icon: "nextjs", color: "#000000" },
-  Angular: { icon: "angular", color: "#DD0031" },
-  JavaScript: { icon: "javascript", color: "#F7DF1E" },
-  TypeScript: { icon: "typescript", color: "#3178C6" },
-  "Tailwind CSS": { icon: "tailwindcss", color: "#06B6D4" },
-  Bootstrap: { icon: "bootstrap", color: "#7952B3" },
-  "Material UI": { icon: "materialui", color: "#007FFF" },
-  "Node.js": { icon: "nodejs", color: "#339933" },
-  PHP: { icon: "php", color: "#777BB4" },
-  Laravel: { icon: "laravel", color: "#FF2D20" },
-  Java: { icon: "java", color: "#ED8B00" },
-  "C#": { icon: "csharp", color: "#239120" },
-  Python: { icon: "python", color: "#3776AB" },
-  MySQL: { icon: "mysql", color: "#4479A1" },
-  "Microsoft SQL Server": { icon: "microsoftsqlserver", color: "#CC2927" },
-  Git: { icon: "git", color: "#F05032" },
-  GitHub: { icon: "github", color: "#24292e" },
-  GitLab: { icon: "gitlab", color: "#FC6D26" },
-  Vercel: { icon: "vercel", color: "#000000" },
-};
+import { experience, projects } from "./data";
 
 const sectionFade = {
   hidden: { opacity: 0, y: 32 },
@@ -135,40 +113,16 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] order-1 md:order-2 md:text-right">
-            <HoverRevealText>Skills</HoverRevealText>
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
+            <HoverRevealText>Tech Stack</HoverRevealText>
           </h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left order-2 md:order-1 mt-3 md:mt-0">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle mt-3">
             Tools and tech I know. Still learning more.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
-          {Object.entries(skills).map(([category, items], i) => (
-            <motion.div
-              key={category}
-              className="md:col-start-2 py-8 text-left overflow-x-auto border-b border-divider last:border-b-0"
-              variants={itemFade}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 * i }}
-            >
-              <span className="font-body text-base font-normal text-foreground tracking-normal block mb-5">
-                {category}
-              </span>
-              <div className="flex flex-wrap gap-x-2 gap-y-2 min-w-0 items-center leading-loose">
-                {items.map((skill, j) => (
-                  <span
-                    key={j}
-                    className="inline-flex items-center rounded-full px-2.5 py-1 font-body text-sm font-normal text-muted bg-accent/10"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12">
+          <SkillsBento />
         </div>
       </motion.section>
 
@@ -182,15 +136,15 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
-            <HoverRevealText>Experience</HoverRevealText>
+            <HoverRevealText>Career Journey</HoverRevealText>
           </h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle text-left md:text-right mt-3 md:mt-0">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle mt-3">
             Where I've been and what I've learned along the way.
           </p>
         </div>
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12">
           {/* Experience rows */}
           {experience.map((entry, i) => (
             <motion.div
@@ -212,18 +166,35 @@ export default function Home() {
                 <div className="font-body text-sm text-muted mt-1 leading-normal">
                   {entry.keywords.split(", ").join(" · ")}
                 </div>
-                <div className="mt-1 font-body text-sm text-muted-subtle">
-                  <span>
-                    {entry.dates}, {entry.type}
+                <div className="mt-1 flex items-center gap-2">
+                  <Pill
+                    className={
+                      i === 0
+                        ? "bg-accent text-background"
+                        : "bg-accent/20 text-muted-subtle"
+                    }
+                  >
+                    {entry.dates}
+                  </Pill>
+                  <span className="font-body text-sm text-muted-subtle">
+                    {entry.type}
                   </span>
                 </div>
               </div>
 
               {/* Desktop / table layout */}
               <div className="hidden md:grid md:grid-cols-4 md:gap-x-4 lg:gap-x-6 items-start">
-                <span className="font-body text-sm text-muted">
-                  {entry.dates}
-                </span>
+                <div className="flex items-start">
+                  <Pill
+                    className={
+                      i === 0
+                        ? "bg-accent text-background"
+                        : "bg-accent/20 text-muted-subtle"
+                    }
+                  >
+                    {entry.dates}
+                  </Pill>
+                </div>
                 <span className="font-body text-base font-normal text-foreground">
                   {entry.company}
                 </span>
@@ -258,20 +229,20 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="flex flex-col md:flex-row-reverse items-start justify-between gap-0 md:gap-6 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
-            <HoverRevealText>Projects</HoverRevealText>
+            <HoverRevealText>Featured Projects</HoverRevealText>
           </h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle text-left mt-3 md:mt-0 md:whitespace-nowrap">
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle mt-3">
             Some things I've built. Take a look and see what's possible.
           </p>
         </div>
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-0 [&>*:last-child]:border-b-0 md:[&>*:nth-last-child(-n+2)]:border-b-0 lg:[&>*:nth-last-child(-n+3)]:border-b-0">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
             {projects.map((project, i) => (
               <motion.div
                 key={i}
-                className="font-body text-foreground text-left py-8 border-b border-divider"
+                className="font-body text-foreground text-left py-6 px-5 sm:px-6 rounded-xl bg-accent/6 h-full"
                 variants={itemFade}
                 initial="hidden"
                 whileInView="visible"
@@ -284,9 +255,17 @@ export default function Home() {
                 <p className="text-sm text-muted mt-1 leading-normal">
                   {project.summary}
                 </p>
-                <p className="font-body text-sm text-muted-subtle mt-1 leading-normal">
-                  {project.tech}
-                </p>
+                <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5">
+                  {project.tech
+                    .split(/[,·]/)
+                    .map((token) => token.trim())
+                    .filter(Boolean)
+                    .map((techLabel, j) => (
+                      <Pill key={j} className="bg-accent/20 text-accent">
+                        {techLabel}
+                      </Pill>
+                    ))}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -303,15 +282,15 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
-            <HoverRevealText>Contact</HoverRevealText>
+            <HoverRevealText>Let's Connect</HoverRevealText>
           </h2>
-          <p className="text-sm max-w-[320px] sm:max-w-[380px] text-muted-subtle md:max-w-none mt-3 md:mt-0">
-            Let's connect and start a conversation.
+          <p className="text-sm max-w-[320px] sm:max-w-[380px] md:max-w-none text-muted-subtle mt-3">
+            I'm open to opportunities and collaborations.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12 items-start">
           {/* Left: contact information */}
           <motion.div
             className="flex flex-col w-full"
@@ -356,7 +335,7 @@ export default function Home() {
           </motion.div>
           {/* Right: Send Message form */}
           <motion.div
-            className="w-full border border-divider rounded-xl p-6 sm:p-8"
+            className="w-full rounded-xl p-6 sm:p-8 bg-accent/6"
             variants={itemFade}
             initial="hidden"
             whileInView="visible"

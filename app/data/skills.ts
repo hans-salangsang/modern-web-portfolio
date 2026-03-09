@@ -19,10 +19,4 @@ export const skills: Record<string, string[]> = {
   ],
   Database: ["MySQL", "Microsoft SQL Server"],
   DevOps: ["Git", "GitHub", "GitLab", "Vercel"],
-  Consulting: [
-    "Requirements Gathering",
-    "Technical Documentation",
-    "Client Communication",
-    "Agile",
-  ],
 };
