@@ -64,9 +64,19 @@ type SkillCategoryCardProps = {
 function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    if (items.length <= 1) return;
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (items.length <= 1 || !isDesktop) return;
 
     const id = setInterval(() => {
       setDirection(1);
@@ -74,7 +84,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
     }, 2600);
 
     return () => clearInterval(id);
-  }, [items.length]);
+  }, [items.length, isDesktop]);
 
   const tech = items[current];
   const meta = techMeta[tech] as TechMeta | undefined;
@@ -112,7 +122,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
 
   return (
     <motion.div
-      className={`group relative flex flex-col rounded-2xl bg-accent/6 px-5 py-4 sm:px-6 sm:py-5 ${sizeClass}`}
+      className={`group relative flex flex-col rounded-2xl bg-accent/6 py-6 px-5 sm:px-6 ${sizeClass}`}
       variants={itemFade}
       initial="hidden"
       whileInView="visible"
@@ -124,7 +134,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
           {category}
         </span>
         {items.length > 1 && (
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <button
               type="button"
               onClick={handlePrev}
@@ -170,7 +180,8 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-4 flex items-center justify-center h-20 md:h-24 lg:h-auto lg:flex-1 lg:min-h-[7rem]">
+      {/* Desktop: show carousel icon + glow */}
+      <div className="mt-4 hidden md:flex items-center justify-center h-20 md:h-24 lg:h-auto lg:flex-1 lg:min-h-[7rem]">
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={tech}
@@ -220,7 +231,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="mt-6 flex flex-wrap gap-1.5 lg:mt-auto lg:justify-start">
+      <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 lg:mt-auto lg:justify-start">
         {items.map((item, idx) => {
           const isActive = item === tech;
           const pillClasses = isActive
@@ -253,7 +264,7 @@ export default function SkillsBentoPills() {
   const skillEntries = Object.entries(skills);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto gap-2 md:gap-3 lg:gap-4 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto gap-3 sm:gap-3 lg:gap-4 w-full">
       {skillEntries.map(([category, items], index) => (
         <SkillCategoryCard
           key={category}

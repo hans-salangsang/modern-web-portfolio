@@ -238,7 +238,7 @@ export default function Home() {
           </p>
         </div>
         <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3 lg:gap-4">
             {projects.map((project, i) => (
               <motion.div
                 key={i}
