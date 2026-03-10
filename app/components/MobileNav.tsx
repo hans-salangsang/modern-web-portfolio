@@ -38,7 +38,7 @@ export default function MobileNav() {
   }, [open]);
 
   const linkClasses =
-    "block font-body text-sm font-normal text-foreground tracking-normal hover:text-muted focus:outline-none rounded";
+    "block font-body text-sm font-normal text-foreground tracking-normal hover:text-accent focus:outline-none rounded";
 
   return (
     <div ref={rootRef} className="md:hidden">

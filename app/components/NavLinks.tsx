@@ -25,7 +25,7 @@ export default function NavLinks() {
   }, []);
 
   const linkClasses =
-    "block font-body text-sm font-normal text-foreground tracking-normal hover:text-muted focus:outline-none rounded";
+    "block font-body text-sm font-normal text-foreground tracking-normal hover:text-accent focus:outline-none rounded";
 
   const desktopHoverProps = isDesktop
     ? {
