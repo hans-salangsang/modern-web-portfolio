@@ -234,12 +234,13 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
       <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 lg:mt-auto lg:justify-start">
         {items.map((item, idx) => {
           const isActive = item === tech;
-          const pillClasses = isActive
-            ? "bg-accent text-background"
-            : "bg-accent/20 text-accent";
+          const pillClasses =
+            isDesktop && isActive
+              ? "bg-accent text-background"
+              : "bg-accent/20 text-accent";
 
           const handleClick = () => {
-            if (idx === current) return;
+            if (!isDesktop || idx === current) return;
             setDirection(idx > current ? 1 : -1);
             setCurrent(idx);
           };
@@ -249,7 +250,9 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
               key={item}
               type="button"
               onClick={handleClick}
-              className="focus:outline-none cursor-pointer"
+              className={`focus:outline-none ${
+                isDesktop ? "cursor-pointer" : "cursor-default"
+              }`}
             >
               <Pill className={pillClasses}>{item}</Pill>
             </button>

@@ -106,7 +106,7 @@ export default function Home() {
       {/* Skills */}
       <motion.section
         id="skills"
-        className="py-20"
+        className="py-20 scroll-mt-28"
         variants={sectionFade}
         initial="hidden"
         whileInView="visible"
@@ -129,7 +129,7 @@ export default function Home() {
       {/* Experience — table-like layout */}
       <motion.section
         id="experience"
-        className="py-20"
+        className="py-20 scroll-mt-28"
         variants={sectionFade}
         initial="hidden"
         whileInView="visible"
@@ -222,7 +222,7 @@ export default function Home() {
       {/* Projects — table-like layout */}
       <motion.section
         id="projects"
-        className="py-20"
+        className="py-20 scroll-mt-28"
         variants={sectionFade}
         initial="hidden"
         whileInView="visible"
@@ -275,7 +275,7 @@ export default function Home() {
       {/* Contact */}
       <motion.section
         id="contact"
-        className="pt-20 pb-32 sm:pb-40"
+        className="pt-20 pb-32 sm:pb-40 scroll-mt-28"
         variants={sectionFade}
         initial="hidden"
         whileInView="visible"
