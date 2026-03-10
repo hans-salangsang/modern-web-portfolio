@@ -7,27 +7,32 @@ import Pill from "./Pill";
 
 const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
-const techMeta: Record<string, { icon: string }> = {
-  React: { icon: "react" },
-  NextJS: { icon: "nextjs" },
-  Angular: { icon: "angular" },
-  JavaScript: { icon: "javascript" },
-  TypeScript: { icon: "typescript" },
-  "Tailwind CSS": { icon: "tailwindcss" },
-  Bootstrap: { icon: "bootstrap" },
-  "Material UI": { icon: "materialui" },
-  "Node.js": { icon: "nodejs" },
-  PHP: { icon: "php" },
-  Laravel: { icon: "laravel" },
-  Java: { icon: "java" },
-  "C#": { icon: "csharp" },
-  Python: { icon: "python" },
-  MySQL: { icon: "mysql" },
-  "Microsoft SQL Server": { icon: "microsoftsqlserver" },
-  Git: { icon: "git" },
-  GitHub: { icon: "github" },
-  GitLab: { icon: "gitlab" },
-  Vercel: { icon: "vercel" },
+type TechMeta = {
+  icon: string;
+  glow?: string; // customizable glow color per technology
+};
+
+const techMeta: Record<string, TechMeta> = {
+  React: { icon: "react", glow: "#61DAFB" },
+  NextJS: { icon: "nextjs", glow: "#FFFFFF" },
+  Angular: { icon: "angular", glow: "#DD0031" },
+  JavaScript: { icon: "javascript", glow: "#FACC15" },
+  TypeScript: { icon: "typescript", glow: "#3B82F6" },
+  "Tailwind CSS": { icon: "tailwindcss", glow: "#22D3EE" },
+  Bootstrap: { icon: "bootstrap", glow: "#A855F7" },
+  "Material UI": { icon: "materialui", glow: "#0EA5E9" },
+  "Node.js": { icon: "nodejs", glow: "#22C55E" },
+  PHP: { icon: "php", glow: "#8B5CF6" },
+  Laravel: { icon: "laravel", glow: "#F97316" },
+  Java: { icon: "java", glow: "#EF4444" },
+  "C#": { icon: "csharp", glow: "#8B5CF6" },
+  Python: { icon: "python", glow: "#EAB308" },
+  MySQL: { icon: "mysql", glow: "#0EA5E9" },
+  "Microsoft SQL Server": { icon: "microsoftsqlserver", glow: "#EF4444" },
+  Git: { icon: "git", glow: "#F97316" },
+  GitHub: { icon: "github", glow: "#FFFFFF" },
+  GitLab: { icon: "gitlab", glow: "#F97316" },
+  Vercel: { icon: "vercel", glow: "#FFFFFF" },
 };
 
 const itemFade = {
@@ -72,7 +77,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
   }, [items.length]);
 
   const tech = items[current];
-  const meta = techMeta[tech] as { icon: string } | undefined;
+  const meta = techMeta[tech] as TechMeta | undefined;
   const iconVariant =
     meta &&
     ["nextjs", "javascript", "typescript", "csharp", "php", "bootstrap", "nodejs"].includes(
@@ -83,9 +88,10 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
   const iconSrc = meta
     ? `${DEVICON_BASE}/${meta.icon}/${meta.icon}-${iconVariant}.svg`
     : null;
-  const iconOriginalSrc = meta
+  const iconColorSrc = meta
     ? `${DEVICON_BASE}/${meta.icon}/${meta.icon}-original.svg`
     : null;
+  const glowColor = meta?.glow;
 
   const sizeClass =
     index === 0
@@ -122,7 +128,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
             <button
               type="button"
               onClick={handlePrev}
-              className="inline-flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border border-accent/50 bg-background/40 hover:bg-background/60 transition-colors"
+              className="inline-flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border border-accent/50 bg-background/40 hover:bg-background/60 transition-colors cursor-pointer"
               aria-label="Previous technology"
             >
               <svg
@@ -143,7 +149,7 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
             <button
               type="button"
               onClick={handleNext}
-              className="inline-flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border border-accent/50 bg-background/40 hover:bg-background/60 transition-colors"
+              className="inline-flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border border-accent/50 bg-background/40 hover:bg-background/60 transition-colors cursor-pointer"
               aria-label="Next technology"
             >
               <svg
@@ -178,6 +184,13 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
           >
             {iconSrc ? (
               <div className="relative h-10 w-10 sm:h-12 sm:w-12">
+                {glowColor && (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-full opacity-0 blur-xl sm:blur-2xl saturate-150 brightness-125 mix-blend-screen transition-transform transition-opacity duration-300 group-hover:opacity-100 group-hover:scale-150"
+                    style={{ backgroundColor: glowColor }}
+                  />
+                )}
                 <div
                   aria-hidden
                   className="absolute inset-0 bg-foreground transition-opacity duration-200 group-hover:opacity-0"
@@ -192,14 +205,12 @@ function SkillCategoryCard({ category, items, index }: SkillCategoryCardProps) {
                     maskSize: "contain",
                   }}
                 />
-                {iconOriginalSrc && (
-                  <img
-                    src={iconOriginalSrc}
-                    alt=""
-                    aria-hidden
-                    className="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                  />
-                )}
+                <img
+                  src={iconColorSrc ?? iconSrc}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 h-full w-full object-contain opacity-0 saturate-150 brightness-110 contrast-110 transition-opacity duration-200 group-hover:opacity-100"
+                />
               </div>
             ) : (
               <span className="font-heading text-3xl sm:text-4xl text-foreground">
