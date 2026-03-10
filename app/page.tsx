@@ -78,28 +78,64 @@ export default function Home() {
           </div>
         </div>
 
-        {/* KPI block */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 sm:gap-x-16 lg:gap-x-20 gap-y-14 sm:gap-y-20 pt-52 pb-8 sm:pb-10 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12">
-          <KpiCard
-            className="lg:col-start-1"
-            label="Years of experience"
-            value={3}
-            suffix="+"
-            durationMs={1000}
-            description="I have been building full-stack applications, dashboards, and analytical tools across different industries."
-          />
-          <KpiCard
-            className="lg:col-start-2"
-            label="KPI label"
-            value={12}
-            description="Short description or metric summary goes here."
-          />
-          <KpiCard
-            className="lg:col-start-1"
-            label="KPI label"
-            value={24}
-            description="Short description or metric summary goes here."
-          />
+      </motion.section>
+
+      {/* About */}
+      <motion.section
+        id="about"
+        className="py-20 scroll-mt-28"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-start text-left md:items-center md:text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
+            <HoverRevealText>About Me</HoverRevealText>
+          </h2>
+          <p className="text-sm max-w-[420px] sm:max-w-[520px] md:max-w-2xl text-muted-subtle mt-3">
+            I&apos;m a full stack developer who cares just as much about
+            readable code and maintainable systems as I do about shipping
+            quickly. I love turning fuzzy ideas into robust, production-ready
+            experiences, whether that&apos;s a data-heavy dashboard, a clean
+            internal tool, or a polished customer-facing product.
+          </p>
+        </div>
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
+            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+              How I work
+            </span>
+            <p className="mt-3 leading-relaxed text-foreground/90">
+              I like breaking big problems into small, testable pieces,
+              documenting decisions, and leaving code in a better state than I
+              found it. I enjoy pairing with designers, product folks, and other
+              engineers to keep feedback loops tight.
+            </p>
+          </div>
+          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
+            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+              What I enjoy building
+            </span>
+            <p className="mt-3 leading-relaxed text-foreground/90">
+              I gravitate toward dashboards, admin panels, and tools that help
+              people make decisions faster. From APIs to frontends, I like
+              owning features end-to-end and making sure they&apos;re reliable
+              in the real world.
+            </p>
+          </div>
+          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
+            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+              Outside of code
+            </span>
+            <p className="mt-3 leading-relaxed text-foreground/90">
+              When I&apos;m not debugging or tinkering with new frameworks,
+              you&apos;ll probably find me learning something new, exploring
+              tools to improve my workflow, or unwinding with games and good
+              music.
+            </p>
+          </div>
         </div>
       </motion.section>
 
