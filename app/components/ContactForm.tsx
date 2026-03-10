@@ -59,8 +59,8 @@ export default function ContactForm() {
           <input
             id="contact-name"
             type="text"
-            placeholder="Your name"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 border border-accent/60 focus:outline-none focus:border-accent transition-colors"
+            placeholder="Your full name"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-0 border-none focus:bg-accent/15"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             required
@@ -73,8 +73,8 @@ export default function ContactForm() {
           <input
             id="contact-email"
             type="email"
-            placeholder="Your email"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 border border-accent/60 focus:outline-none focus:border-accent transition-colors"
+            placeholder="Your email address"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-0 border-none focus:bg-accent/15"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
@@ -87,8 +87,8 @@ export default function ContactForm() {
           <textarea
             id="contact-message"
             rows={4}
-            placeholder="Type your message"
-            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y border border-accent/60 focus:outline-none focus:border-accent transition-colors"
+            placeholder="Share a bit about what you'd like to work on or ask"
+            className="font-body text-sm text-foreground placeholder:text-muted-subtle bg-accent/10 rounded-lg px-4 py-3 resize-y focus:outline-none focus:ring-0 border-none focus:bg-accent/15"
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             required
