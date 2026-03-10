@@ -40,7 +40,7 @@ export default function Home() {
       {/* Hero: full-screen, asymmetric */}
       <motion.section
         id="hero"
-        className="relative w-full flex flex-col"
+        className="relative w-full flex flex-col pb-16 sm:pb-20"
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -94,47 +94,66 @@ export default function Home() {
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>About Me</HoverRevealText>
           </h2>
-          <p className="text-sm max-w-[420px] sm:max-w-[520px] md:max-w-2xl text-muted-subtle mt-3">
-            I&apos;m a full stack developer who cares just as much about
-            readable code and maintainable systems as I do about shipping
-            quickly. I love turning fuzzy ideas into robust, production-ready
-            experiences, whether that&apos;s a data-heavy dashboard, a clean
-            internal tool, or a polished customer-facing product.
+          <p className="text-sm max-w-[460px] sm:max-w-[560px] md:max-w-2xl text-muted-subtle mt-3">
+            I&apos;m Hans Salangsang, a full stack developer with a strong
+            foundation in enterprise systems, data, and automation. I enjoy
+            designing and building end-to-end solutions that are clean,
+            reliable, and make work more efficient and decisions easier.
           </p>
         </div>
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
-            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-3 lg:gap-4">
+          <div className="font-body text-foreground text-left py-6 px-5 sm:px-6 rounded-xl bg-accent/6 h-full">
+            <span className="font-body text-base font-normal text-foreground">
               How I work
             </span>
-            <p className="mt-3 leading-relaxed text-foreground/90">
-              I like breaking big problems into small, testable pieces,
-              documenting decisions, and leaving code in a better state than I
-              found it. I enjoy pairing with designers, product folks, and other
-              engineers to keep feedback loops tight.
+            <p className="mt-3 font-body text-sm text-muted leading-normal">
+              I like{" "}
+              <span className="text-accent">
+                breaking big problems into small, testable pieces
+              </span>{" "}
+              and leaving code in a better state than I found it. I care about{" "}
+              <span className="text-accent">
+                reliability, maintainability, and clear communication
+              </span>{" "}
+              with the people I work with so we stay aligned.
             </p>
           </div>
-          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
-            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+          <div className="font-body text-foreground text-left py-6 px-5 sm:px-6 rounded-xl bg-accent/6 h-full">
+            <span className="font-body text-base font-normal text-foreground">
               What I enjoy building
             </span>
-            <p className="mt-3 leading-relaxed text-foreground/90">
-              I gravitate toward dashboards, admin panels, and tools that help
-              people make decisions faster. From APIs to frontends, I like
-              owning features end-to-end and making sure they&apos;re reliable
-              in the real world.
+            <p className="mt-3 font-body text-sm text-muted leading-normal">
+              I gravitate toward{" "}
+              <span className="text-accent">
+                dashboards, admin panels, ERP extensions, and automation tools
+                that remove manual work
+              </span>
+              . I like owning features end-to-end and{" "}
+              <span className="text-accent">
+                making systems easier to use, understand, and maintain
+              </span>
+              .
             </p>
           </div>
-          <div className="font-body text-sm text-muted-subtle bg-accent/6 rounded-xl p-5 sm:p-6">
-            <span className="text-xs font-medium tracking-[0.16em] uppercase text-accent">
+          <div className="font-body text-foreground text-left py-6 px-5 sm:px-6 rounded-xl bg-accent/6 h-full">
+            <span className="font-body text-base font-normal text-foreground">
               Outside of code
             </span>
-            <p className="mt-3 leading-relaxed text-foreground/90">
-              When I&apos;m not debugging or tinkering with new frameworks,
-              you&apos;ll probably find me learning something new, exploring
-              tools to improve my workflow, or unwinding with games and good
-              music.
+            <p className="mt-3 font-body text-sm text-muted leading-normal">
+              I&apos;m{" "}
+              <span className="text-accent">
+                motivated by growth and continuous learning
+              </span>
+              , so even outside of work I spend a lot of time exploring new
+              technologies and how AI can level up development workflows. I
+              also enjoy{" "}
+              <span className="text-accent">
+                arts, creative work, and unwinding with games and good music
+              </span>
+              .
             </p>
+          </div>
           </div>
         </div>
       </motion.section>
