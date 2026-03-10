@@ -113,7 +113,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-start text-left md:items-center md:text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Tech Stack</HoverRevealText>
           </h2>
@@ -136,7 +136,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-start text-left md:items-center md:text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Career Journey</HoverRevealText>
           </h2>
@@ -229,7 +229,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-start text-left md:items-center md:text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Featured Projects</HoverRevealText>
           </h2>
@@ -282,7 +282,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-center text-center">
+        <div className="w-full pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 flex flex-col items-start text-left md:items-center md:text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em]">
             <HoverRevealText>Let's Connect</HoverRevealText>
           </h2>
