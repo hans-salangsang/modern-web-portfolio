@@ -34,6 +34,15 @@ export default function NavLinks() {
       }
     : {};
 
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === "#hero") {
+      event.preventDefault();
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <ul className="hidden md:flex flex-wrap items-center gap-6 sm:gap-8">
       {navLinks.map((link) => (
@@ -41,6 +50,7 @@ export default function NavLinks() {
           <motion.a
             href={link.href}
             className={linkClasses}
+            onClick={(event) => handleClick(event, link.href)}
             {...desktopHoverProps}
           >
             {link.label}

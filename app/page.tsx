@@ -47,8 +47,8 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Hero: 3 columns — name (2 cols), role + description (1 col) */}
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-center md:justify-items-center">
-          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-14 sm:pt-18 md:pt-20 lg:pt-22 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-center md:justify-items-center">
+          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center gap-6 sm:gap-7">
             <div className="relative flex items-center justify-center">
               <div className="avatar-glow z-0" aria-hidden="true" />
               <Image
