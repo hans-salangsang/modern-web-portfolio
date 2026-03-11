@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import KpiCard from "./components/KpiCard";
 import Button from "./components/Button";
@@ -47,7 +48,18 @@ export default function Home() {
       >
         {/* Hero: 3 columns — name (2 cols), role + description (1 col) */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-x-6 sm:gap-x-8 lg:gap-x-10 w-full pt-32 sm:pt-40 md:pt-44 md:sm:pt-52 pl-6 pr-4 sm:pl-12 sm:pr-8 lg:pl-16 lg:pr-12 items-start md:items-center md:justify-items-center">
-          <div className="min-w-0 text-left md:text-center">
+          <div className="min-w-0 text-left md:text-center flex flex-col items-start md:items-center gap-8">
+            <div className="relative flex items-center justify-center">
+              <div className="avatar-glow z-0" aria-hidden="true" />
+              <Image
+                src="/avatar.png"
+                alt="Illustrated avatar of Hans Salangsang"
+                width={320}
+                height={320}
+                className="relative z-10 w-48 sm:w-64 lg:w-72 h-auto avatar-soft-edge"
+                priority
+              />
+            </div>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-[-0.05em] leading-[0.98] capitalize">
               <span className="block text-foreground -mt-1 sm:-mt-2 -ml-0.5">
                 Hans Salangsang

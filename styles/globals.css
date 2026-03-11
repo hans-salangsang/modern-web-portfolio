@@ -109,3 +109,39 @@
   }
 }
 
+@layer utilities {
+  .avatar-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle,
+      color-mix(in oklch, var(--color-accent) 85%, transparent) 0%,
+      color-mix(in oklch, var(--color-accent) 65%, transparent) 20%,
+      transparent 75%
+    );
+    filter: blur(36px);
+    transform: scale(1.2);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .avatar-soft-edge {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 80%,
+      rgba(0, 0, 0, 0.7) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 80%,
+      rgba(0, 0, 0, 0.7) 82%,
+      transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
