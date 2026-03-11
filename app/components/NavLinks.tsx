@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const navLinks = [
   { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
+  // { href: "#about", label: "About" }, // temporarily hidden
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },

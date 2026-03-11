@@ -80,7 +80,8 @@ export default function Home() {
 
       </motion.section>
 
-      {/* About */}
+      {/* About (temporarily hidden) */}
+      {/* 
       <motion.section
         id="about"
         className="py-20 scroll-mt-28"
@@ -157,6 +158,7 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+      */}
 
       {/* Skills */}
       <motion.section
